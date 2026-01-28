@@ -88,3 +88,5 @@
 4) Страница деталей встречи и управление приглашениями  
 5) Адаптивный UI с уведомлениями и навигацией  
 
+## Figma
+https://www.figma.com/design/kWD90Z9H9IukAQFTbtPbs6/app?node-id=0-1&t=hCOz2Pq7VfE5L4gk-1
