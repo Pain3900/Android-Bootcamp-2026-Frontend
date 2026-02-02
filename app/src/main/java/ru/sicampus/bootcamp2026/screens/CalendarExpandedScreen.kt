@@ -1,77 +1,87 @@
 package ru.sicampus.bootcamp2026.screens
-
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun CalendarExpandedScreen() {
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color(0xFF121212))
-            .padding(16.dp)
     ) {
-        Spacer(Modifier.height(48.dp))
-        Text("27 января", color = Color.White)
-
-        Spacer(Modifier.height(24.dp))
-
-        TimeSlot("8:00")
-        EventItem("Собрание", Color(0xFF22C55E))
-        TimeSlot("9:00")
-        TimeSlot("10:00")
-        EventItem("Конференция", Color(0xFF3B82F6))
-        TimeSlot("11:00")
-        TimeSlot("12:00")
-        TimeSlot("13:00")
-        TimeSlot("14:00")
-        TimeSlot("15:00")
-        TimeSlot("16:00")
-        TimeSlot("17:00")
-        TimeSlot("18:00")
-        TimeSlot("19:00")
-        TimeSlot("20:00")
-
-        Spacer(Modifier.weight(1f))
-
-        FloatingActionButton(
-            onClick = {},
-            containerColor = Color.White,
-            modifier = Modifier.align(Alignment.End)
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
         ) {
-            Icon(Icons.Default.Add, contentDescription = null)
+            Text(
+                text = "27 января",
+                color = Color.White,
+                fontSize = 24.sp,
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+
+            Spacer(Modifier.height(12.dp))
+
+            repeat(13) { index ->
+                Text(
+                    text = "${8 + index}:00",
+                    color = Color.Gray,
+                    fontSize = 20.sp,
+                    modifier = Modifier.padding(vertical = 6.dp)
+                )
+            }
+
+            Spacer(Modifier.weight(1f))
         }
-    }
-}
 
-@Composable
-fun TimeSlot(time: String) {
-    Spacer(Modifier.height(12.dp))
-    Text(
-        text = time,
-        color = Color.Gray,
-        modifier = Modifier.padding(vertical = 6.dp)
+        // Нижняя панель
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(80.dp)
+                .align(Alignment.BottomCenter)
+                .padding(horizontal = 16.dp)
+                .background(Color(0xFF1E1E1E), RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    Icons.Default.Person,
+                    contentDescription = "Profile",
+                    tint = Color.Gray,
+                    modifier = Modifier.size(24.dp)
+                )
 
-    )
-}
+                FloatingActionButton(
+                    onClick = {},
+                    containerColor = Color(0xFF6200EE),
+                    modifier = Modifier.size(64.dp)
+                ) {
+                    Icon(
+                        Icons.Default.Add,
+                        contentDescription = null,
+                        tint = Color.White
+                    )
+                }
 
-@Composable
-fun EventItem(title: String, color: Color) {
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(color, RoundedCornerShape(8.dp))
-            .padding(8.dp)
-    ) {
-        Text(title, color = Color.White)
+            }
+        }
     }
 }

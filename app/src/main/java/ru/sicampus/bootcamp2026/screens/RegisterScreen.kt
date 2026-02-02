@@ -1,4 +1,5 @@
 package ru.sicampus.bootcamp2026.screens
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -8,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import ru.sicampus.bootcamp2026.components.*
 
 @Composable
@@ -28,19 +30,21 @@ fun RegisterScreen() {
         Text(
             text = "Зарегистрируйте\nсвой аккаунт",
             color = Color.White,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            fontSize = 36   .sp,
+            lineHeight = 40.sp
         )
 
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(22.dp))
         Avatar()
 
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(26.dp))
         AppTextField(name, { name = it }, "Имя")
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(18.dp))
         AppTextField(email, { email = it }, "Почта")
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(18.dp))
         AppTextField(password, { password = it }, "Пароль")
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(18.dp))
         AppTextField(position, { position = it }, "Должность")
 
         Spacer(Modifier.height(24.dp))

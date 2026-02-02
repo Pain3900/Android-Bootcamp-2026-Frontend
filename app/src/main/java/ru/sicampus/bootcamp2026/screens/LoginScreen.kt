@@ -2,6 +2,7 @@ package ru.sicampus.bootcamp2026.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -10,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import ru.sicampus.bootcamp2026.components.*
 
 @Composable
@@ -23,21 +25,24 @@ fun LoginScreen() {
             .background(Color(0xFF121212))
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
 
         Text(
-            text = "Добро пожаловать\nв приложение для встреч!",
+            text = "Добро Пожаловать\nв приложение для встреч!",
             color = Color.White,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Start,
+            fontSize = 32.sp,
+            lineHeight = 40.sp
+
         )
 
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(40.dp))
 
         Avatar()
 
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(40.dp))
 
         AppTextField(email, { email = it }, "Почта")
         Spacer(Modifier.height(12.dp))

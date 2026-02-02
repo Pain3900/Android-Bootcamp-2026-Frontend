@@ -15,19 +15,19 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun Avatar(size: Dp = 96.dp) {
+fun Avatar(size: Dp = 160.dp) {
     Box(
         modifier = Modifier
             .size(size)
             .clip(CircleShape)
-            .background(Color.Gray),
+            .background(Color.White),
         contentAlignment = Alignment.Center
     ) {
         Icon(
             imageVector = Icons.Default.Person,
             contentDescription = null,
-            tint = Color.White,
-            modifier = Modifier.size(size / 2)
+            tint = Color(0xFF3B82F6),
+            modifier = Modifier.size(size * 0.8f)
         )
     }
 }
