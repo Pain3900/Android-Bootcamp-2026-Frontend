@@ -1,4 +1,4 @@
-package ru.sicampus.bootcamp2026.screens
+package ru.sicampus.bootcamp2026.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

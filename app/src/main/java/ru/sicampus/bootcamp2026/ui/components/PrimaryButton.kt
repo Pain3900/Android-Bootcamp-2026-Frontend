@@ -1,4 +1,4 @@
-package ru.sicampus.bootcamp2026.components
+package ru.sicampus.bootcamp2026.ui.components
 
 import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.layout.fillMaxWidth

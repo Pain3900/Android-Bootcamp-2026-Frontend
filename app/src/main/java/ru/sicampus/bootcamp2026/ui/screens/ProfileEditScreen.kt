@@ -1,6 +1,7 @@
-package ru.sicampus.bootcamp2026.screens
+package ru.sicampus.bootcamp2026.ui.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -17,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CreateMeetingScreen() {
+fun ProfileEditScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -50,7 +51,7 @@ fun CreateMeetingScreen() {
 
                 // Заголовок по центру
                 Text(
-                    text = "Создание встречи",
+                    text = "Изменение профиля",
                     color = Color.White,
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
@@ -63,7 +64,39 @@ fun CreateMeetingScreen() {
                 Spacer(modifier = Modifier.size(48.dp))
             }
 
-            // ФОРМА СОЗДАНИЯ ВСТРЕЧИ (статическая)
+            // Аватар
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(120.dp)
+                    .align(Alignment.CenterHorizontally),
+                contentAlignment = Alignment.Center
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(80.dp)
+                        .background(Color(0xFF2D2D2D), RoundedCornerShape(12.dp))
+                        .padding(4.dp)
+                ) {
+                    // Здесь будет иконка или аватар
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color(0xFF6200EE), RoundedCornerShape(12.dp))
+                    ) {
+                        Text(
+                            text = "A",
+                            color = Color.White,
+                            fontSize = 36.sp,
+                            modifier = Modifier.align(Alignment.Center)
+                        )
+                    }
+                }
+            }
+
+            Spacer(Modifier.height(24.dp))
+
+            // Форма редактирования
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -71,11 +104,11 @@ fun CreateMeetingScreen() {
                     .padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                // Название встречи
+                // Имя
                 OutlinedTextField(
-                    value = TextFieldValue("Командная встреча"),
+                    value = TextFieldValue("Иван"),
                     onValueChange = { },
-                    label = { Text("Название", color = Color.Gray) },
+                    label = { Text("Имя", color = Color.Gray) },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color(0xFF6200EE),
                         unfocusedBorderColor = Color.Gray.copy(alpha = 0.5f),
@@ -88,29 +121,11 @@ fun CreateMeetingScreen() {
                     textStyle = TextStyle(color = Color.White, fontSize = 16.sp)
                 )
 
-                // Описание
+                // Почта
                 OutlinedTextField(
-                    value = TextFieldValue("Обсуждение планов на квартал"),
+                    value = TextFieldValue("ivan@example.com"),
                     onValueChange = { },
-                    label = { Text("Описание", color = Color.Gray) },
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = Color(0xFF6200EE),
-                        unfocusedBorderColor = Color.Gray.copy(alpha = 0.5f),
-                        focusedLabelColor = Color(0xFF6200EE),
-                        unfocusedLabelColor = Color.Gray,
-                        focusedTextColor = Color.White,
-                        unfocusedTextColor = Color.White
-                    ),
-                    modifier = Modifier.fillMaxWidth(),
-                    textStyle = TextStyle(color = Color.White, fontSize = 16.sp),
-                    maxLines = 3
-                )
-
-                // Дата
-                OutlinedTextField(
-                    value = TextFieldValue("27 января 2026"),
-                    onValueChange = { },
-                    label = { Text("Дата", color = Color.Gray) },
+                    label = { Text("Почта", color = Color.Gray) },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color(0xFF6200EE),
                         unfocusedBorderColor = Color.Gray.copy(alpha = 0.5f),
@@ -123,11 +138,11 @@ fun CreateMeetingScreen() {
                     textStyle = TextStyle(color = Color.White, fontSize = 16.sp)
                 )
 
-                // Время
+                // Пароль
                 OutlinedTextField(
-                    value = TextFieldValue("15:00 - 16:30"),
+                    value = TextFieldValue("••••••••"),
                     onValueChange = { },
-                    label = { Text("Время", color = Color.Gray) },
+                    label = { Text("Пароль", color = Color.Gray) },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color(0xFF6200EE),
                         unfocusedBorderColor = Color.Gray.copy(alpha = 0.5f),
@@ -140,11 +155,11 @@ fun CreateMeetingScreen() {
                     textStyle = TextStyle(color = Color.White, fontSize = 16.sp)
                 )
 
-                // Место встречи
+                // Должность
                 OutlinedTextField(
-                    value = TextFieldValue("Конференц-зал А"),
+                    value = TextFieldValue("Разработчик"),
                     onValueChange = { },
-                    label = { Text("Место встречи", color = Color.Gray) },
+                    label = { Text("Должность", color = Color.Gray) },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = Color(0xFF6200EE),
                         unfocusedBorderColor = Color.Gray.copy(alpha = 0.5f),
@@ -157,42 +172,21 @@ fun CreateMeetingScreen() {
                     textStyle = TextStyle(color = Color.White, fontSize = 16.sp)
                 )
 
-                // Кнопки
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(12.dp),
-                    modifier = Modifier.fillMaxWidth()
+                // Кнопка готово
+                Button(
+                    onClick = { },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF6200EE)
+                    ),
+                    shape = RoundedCornerShape(12.dp)
                 ) {
-                    Button(
-                        onClick = { },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF3B82F6)
-                        ),
-                        shape = RoundedCornerShape(12.dp)
-                    ) {
-                        Text(
-                            text = "Добавить участников",
-                            color = Color.White,
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Medium
-                        )
-                    }
-
-                    Button(
-                        onClick = { },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF22C55E)
-                        ),
-                        shape = RoundedCornerShape(12.dp)
-                    ) {
-                        Text(
-                            text = "Создать встречу",
-                            color = Color.White,
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Medium
-                        )
-                    }
+                    Text(
+                        text = "Готово",
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Medium
+                    )
                 }
             }
         }

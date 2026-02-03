@@ -1,8 +1,7 @@
-package ru.sicampus.bootcamp2026.screens
+package ru.sicampus.bootcamp2026.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -12,7 +11,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.sicampus.bootcamp2026.components.PrimaryButton
+import ru.sicampus.bootcamp2026.ui.components.PrimaryButton
 
 @Composable
 fun EventBottomSheet() {

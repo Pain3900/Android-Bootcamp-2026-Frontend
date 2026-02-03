@@ -1,4 +1,4 @@
-package ru.sicampus.bootcamp2026.screens
+package ru.sicampus.bootcamp2026.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,7 +12,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.sicampus.bootcamp2026.components.*
+import ru.sicampus.bootcamp2026.ui.components.AppTextField
+import ru.sicampus.bootcamp2026.ui.components.Avatar
+import ru.sicampus.bootcamp2026.ui.components.PrimaryButton
 
 @Composable
 fun LoginScreen() {

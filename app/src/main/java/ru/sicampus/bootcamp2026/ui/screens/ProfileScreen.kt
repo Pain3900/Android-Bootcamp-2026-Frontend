@@ -1,4 +1,4 @@
-package ru.sicampus.bootcamp2026.screens
+package ru.sicampus.bootcamp2026.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -11,8 +11,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import ru.sicampus.bootcamp2026.components.Avatar
-import ru.sicampus.bootcamp2026.components.PrimaryButton
+import ru.sicampus.bootcamp2026.ui.components.Avatar
+import ru.sicampus.bootcamp2026.ui.components.PrimaryButton
 
 @Composable
 fun ProfileScreen() {
